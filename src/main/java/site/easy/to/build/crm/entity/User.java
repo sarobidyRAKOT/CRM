@@ -17,6 +17,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
+    
     public interface ValidationGroupInclusion {}
     public interface RegistrationValidation {}
     public interface SetEmployeePasswordValidation {}

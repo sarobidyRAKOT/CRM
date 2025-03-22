@@ -1,0 +1,10 @@
+DELETE FROM lead_action;
+DELETE FROM file;
+DELETE FROM google_drive_file;
+DELETE FROM trigger_contract;
+DELETE FROM trigger_lead;
+DELETE FROM ticket_settings;
+DELETE FROM lead_settings;
+DELETE FROM contract_settings;
+DELETE FROM email_template;
+DELETE FROM trigger_ticket;

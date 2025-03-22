@@ -81,11 +81,13 @@ public class ManagerController {
 
     @GetMapping("/manager/register-user")
     public String showRegistrationForm(Model model, Authentication authentication) {
+        
         int userId = authenticationUtils.getLoggedInUserId(authentication);
         User loggedInUser = userService.findById(userId);
         if(loggedInUser.isInactiveUser()) {
             return "error/account-inactive";
         }
+
         boolean gmailAccess = false;
         boolean isGoogleUser = !(authentication instanceof UsernamePasswordAuthenticationToken);
         if (isGoogleUser) {
@@ -93,6 +95,7 @@ public class ManagerController {
             gmailAccess = authenticationUtils.checkIfAppHasAccess("https://www.googleapis.com/auth/gmail.modify", oAuthUser);
         }
         List<Role> roles = roleService.getAllRoles();
+        
         model.addAttribute("gmailAccess",gmailAccess);
         model.addAttribute("isGoogleUser",isGoogleUser);
         model.addAttribute("roles",roles);
@@ -103,6 +106,7 @@ public class ManagerController {
     @PostMapping("/manager/register-user")
     public String registerUser(@ModelAttribute("user") @Validated(User.ValidationGroupInclusion.class) User user, BindingResult bindingResult,
                                @RequestParam("role") int roleId, Model model, Authentication authentication){
+        
         int userId = authenticationUtils.getLoggedInUserId(authentication);
         User loggedInUser = userService.findById(userId);
         if(loggedInUser.isInactiveUser()) {
@@ -139,6 +143,7 @@ public class ManagerController {
         if(googleGmailApiService != null) {
             EmailTokenUtils.sendRegistrationEmail(user.getEmail(), name, baseUrl, oAuthUser, googleGmailApiService);
         }
+        
         user.setUsername(name);
         user.setPasswordSet(false);
         user.setCreatedAt(LocalDateTime.now());

@@ -31,6 +31,7 @@ public class CrmApplication extends SpringBootServletInitializer {
         // Définit les variables d'environnement
         System.setProperty("GOOGLE_CLIENT_ID", dotenv.get("GOOGLE_CLIENT_ID"));
         System.setProperty("GOOGLE_CLIENT_SECRET", dotenv.get("GOOGLE_CLIENT_SECRET"));
+        System.setProperty("WEATHER_API", dotenv.get("WEATHER_API"));
     }
 
 	@Override

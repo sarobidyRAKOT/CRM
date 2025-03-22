@@ -45,6 +45,7 @@ public class AuthenticationUtils {
 
     public int getLoggedInUserId(Authentication authentication) {
         User user;
+        
         CustomerLoginInfo customerLoginInfo;
         if (authentication instanceof UsernamePasswordAuthenticationToken) {
             UserDetailsService authenticatedUserDetailsService = getAuthenticatedUserDetailsService(authentication);

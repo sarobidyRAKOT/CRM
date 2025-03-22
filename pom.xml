@@ -146,6 +146,13 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- ADD DEPANDANCES -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.6</version> <!-- Assurez-vous d'utiliser la dernière version -->
+		</dependency>
+
     </dependencies>
 	<build>
 		<plugins>
