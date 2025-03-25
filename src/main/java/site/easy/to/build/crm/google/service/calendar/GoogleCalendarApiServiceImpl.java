@@ -4,8 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.api.client.http.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import site.easy.to.build.crm.entity.Lead;
+
 import site.easy.to.build.crm.entity.OAuthUser;
+import site.easy.to.build.crm.entity.lead.Lead;
 import site.easy.to.build.crm.google.model.calendar.*;
 import site.easy.to.build.crm.google.util.GoogleApiHelper;
 import site.easy.to.build.crm.service.lead.LeadService;

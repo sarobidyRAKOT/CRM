@@ -1,6 +1,7 @@
 package site.easy.to.build.crm.entity;
 
 import jakarta.persistence.*;
+import site.easy.to.build.crm.entity.lead.Lead;
 
 @Entity
 @Table(name = "file")

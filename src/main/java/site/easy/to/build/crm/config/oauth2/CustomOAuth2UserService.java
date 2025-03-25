@@ -16,7 +16,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     UserRepository userRepository;
 
     @Override
-    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+    public OAuth2User loadUser (OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         DefaultOidcUser defaultOidcUser = (DefaultOidcUser) super.loadUser(userRequest);
 
         String email = defaultOidcUser.getEmail();

@@ -17,6 +17,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import site.easy.to.build.crm.cron.ContractExpirationChecker;
 import site.easy.to.build.crm.entity.*;
+import site.easy.to.build.crm.entity.Customers.Customer;
+import site.easy.to.build.crm.entity.lead.Lead;
 import site.easy.to.build.crm.entity.settings.ContractEmailSettings;
 import site.easy.to.build.crm.google.model.drive.GoogleDriveFolder;
 import site.easy.to.build.crm.google.model.gmail.Attachment;

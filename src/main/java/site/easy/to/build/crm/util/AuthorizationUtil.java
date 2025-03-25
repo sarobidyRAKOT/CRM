@@ -9,11 +9,11 @@ import java.util.Objects;
 
 public class  AuthorizationUtil {
 
-    public static Boolean  checkIfUserAuthorized(User employee, User loggedinUser) {
+    public static Boolean  checkIfUserAuthorized (User employee, User loggedinUser) {
         return Objects.equals(loggedinUser.getId(), employee.getId());
     }
 
-    public static Boolean hasRole(Authentication authentication, String role) {
+    public static Boolean hasRole (Authentication authentication, String role) {
         GrantedAuthority authorityToCheck = new SimpleGrantedAuthority(role);
         return authentication.getAuthorities().contains(authorityToCheck);
     }

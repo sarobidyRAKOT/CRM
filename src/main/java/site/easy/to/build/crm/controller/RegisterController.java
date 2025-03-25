@@ -57,16 +57,18 @@ public class RegisterController {
             role = roleService.findByName("ROLE_EMPLOYEE");
             user.setStatus("inactive");
         }
+
         user.setRoles(List.of(role));
         user.setCreatedAt(now);
         user.setPasswordSet(true);
         String hashPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(hashPassword);
-        User createdUser = userService.save(user);
+        User createdUser = userService.save(user); // SAVE USER ...
+
         UserProfile profile = new UserProfile();
         profile.setUser(createdUser);
         profile.setFirstName(user.getUsername());
-        userProfileService.save(profile);
+        userProfileService.save(profile); // SAVE USER PROFIL ...
 
         return "redirect:/login";
     }

@@ -13,20 +13,17 @@ public class TimeDateUtil {
         List<TimeZoneLabel> timeZoneLabels = new ArrayList<>();
         Instant now = Instant.now();
 
-        ZoneId.getAvailableZoneIds().stream()
-                .distinct()
-                .sorted()
-                .map(ZoneId::of)
-                .forEach(zoneId -> {
-                    ZonedDateTime zonedDateTime = now.atZone(zoneId);
-                    ZoneOffset zoneOffset = zonedDateTime.getOffset();
-                    String offset = DateTimeFormatter.ofPattern("XXX").format(zoneOffset);
+        ZoneId.getAvailableZoneIds().stream().distinct().sorted().map(ZoneId::of)
+        .forEach(zoneId -> {
+            ZonedDateTime zonedDateTime = now.atZone(zoneId);
+            ZoneOffset zoneOffset = zonedDateTime.getOffset();
+            String offset = DateTimeFormatter.ofPattern("XXX").format(zoneOffset);
 
-                    // Format the label as desired, e.g., "GMT+03:00 (Country Name)"
-                    String label = zoneId.getId() + " (GMT" + offset + ")";
+            // Format the label as desired, e.g., "GMT+03:00 (Country Name)"
+            String label = zoneId.getId() + " (GMT" + offset + ")";
 
-                    timeZoneLabels.add(new TimeZoneLabel(label, offset));
-                });
+            timeZoneLabels.add(new TimeZoneLabel(label, offset));
+        });
 
         return timeZoneLabels;
     }

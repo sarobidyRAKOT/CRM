@@ -100,6 +100,7 @@
                         <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'employee/customer/manager/all-customers'}">All customers</a></li>
                         <li><a th:href="${home + 'employee/customer/my-customers'}">My customers</a></li>
                         <li><a th:href="${home + 'employee/customer/create-customer'}">Create customer</a></li>
+                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"  th:href="${home + 'budget-customer/manager/ajouterBudget-customer'}">Ajouter Budget</a></li>
                     </ul>
                 </li>
                 <li class="nav-small-cap">--- Tickets</li>
@@ -122,11 +123,11 @@
                         <span class="hide-menu">Leads</span>
                     </a>
                     <ul class="collapse">
-                        <!--                        <li><a href="/all-customers">All customers</a></li>-->
-                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'employee/lead/manager/all-leads'}">All Leads</a></li>
                         <li><a th:href="${home + 'employee/lead/assigned-leads'}">Assigned Leads</a></li>
-                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'employee/lead/created-leads'}">Created Leads</a></li>
                         <li><a th:href="${home + 'employee/lead/create'}">Create new Lead</a></li>
+                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'employee/lead/manager/all-leads'}">All Leads</a></li>
+                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'employee/lead/created-leads'}">Created Leads</a></li>
+                        <li><a th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}" th:href="${home + 'depense-lead/ajouter/depense-lead'}">Ajouter depenses</a></li>
                     </ul>
                 </li>
                 <li class="nav-small-cap">--- Contracts</li>

@@ -2,6 +2,7 @@ package site.easy.to.build.crm.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import site.easy.to.build.crm.entity.Customers.Customer;
 
 @Entity
 @Table(name = "customer_login_info")

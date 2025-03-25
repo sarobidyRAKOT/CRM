@@ -12,6 +12,7 @@ public class UniqueUsernameValidator  implements ConstraintValidator<UniqueUsern
 
     private final UserService userService;
 
+
     @Autowired
     public UniqueUsernameValidator(UserService userService) {
         this.userService = userService;
@@ -25,6 +26,7 @@ public class UniqueUsernameValidator  implements ConstraintValidator<UniqueUsern
     public void initialize(UniqueUsername constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
+
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {

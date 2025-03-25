@@ -1,8 +1,9 @@
 package site.easy.to.build.crm.service.customer;
 
 import org.springframework.stereotype.Service;
-import site.easy.to.build.crm.repository.CustomerLoginInfoRepository;
+
 import site.easy.to.build.crm.entity.CustomerLoginInfo;
+import site.easy.to.build.crm.repository.Customer.CustomerLoginInfoRepository;
 
 @Service
 public class CustomerLoginInfoServiceImpl implements CustomerLoginInfoService {

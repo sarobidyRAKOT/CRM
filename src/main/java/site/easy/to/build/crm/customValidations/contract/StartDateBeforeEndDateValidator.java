@@ -15,7 +15,7 @@ public class StartDateBeforeEndDateValidator implements ConstraintValidator<Star
     @Override
     public boolean isValid(Contract contract, ConstraintValidatorContext context) {
         if (contract == null ||contract.getStartDate() == null || contract.getEndDate() == null
-                || contract.getStartDate().isEmpty() || contract.getEndDate().isEmpty()) {
+        || contract.getStartDate().isEmpty() || contract.getEndDate().isEmpty()) {
             return true;
         }
 

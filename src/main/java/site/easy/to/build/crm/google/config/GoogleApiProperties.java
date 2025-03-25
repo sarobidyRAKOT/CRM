@@ -38,23 +38,18 @@ public class GoogleApiProperties {
         this.scope = scope;
     }
 
-    public String buildAuthorizationUri(String redirectUri,
-                                        String state,
-                                        String accessType,
-                                        String email,
-                                        List<String> requiredScopes,
-                                        GoogleAuthorizationCodeFlow googleAuthorizationCodeFlow) {
+    public String buildAuthorizationUri(String redirectUri, String state, String accessType, String email, List<String> requiredScopes, GoogleAuthorizationCodeFlow googleAuthorizationCodeFlow) {
 
         return googleAuthorizationCodeFlow
-                .newAuthorizationUrl()
-                .setClientId(clientId)
-                .setRedirectUri(redirectUri)
-                .setScopes(requiredScopes)
-                .setState(state)
-                .setAccessType(accessType)
-                .set("login_hint", email)
-                .set("prompt", "consent")
-                .build();
+            .newAuthorizationUrl()
+            .setClientId(clientId)
+            .setRedirectUri(redirectUri)
+            .setScopes(requiredScopes)
+            .setState(state)
+            .setAccessType(accessType)
+            .set("login_hint", email)
+            .set("prompt", "consent")
+            .build();
     }
 
 }

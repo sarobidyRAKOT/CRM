@@ -1,7 +1,7 @@
 package site.easy.to.build.crm.service.contract;
 
 import site.easy.to.build.crm.entity.Contract;
-import site.easy.to.build.crm.entity.Customer;
+import site.easy.to.build.crm.entity.Customers.Customer;
 
 import java.util.List;
 

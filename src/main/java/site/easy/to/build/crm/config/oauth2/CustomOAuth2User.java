@@ -15,6 +15,7 @@ public class CustomOAuth2User implements OAuth2User {
     private OAuth2User oauth2User;
     private final User user;
     private final DefaultOidcUser defaultOidcUser;
+    
     public CustomOAuth2User(DefaultOidcUser defaultOidcUser, User user) {
         this.defaultOidcUser = defaultOidcUser;
         this.user = user;
