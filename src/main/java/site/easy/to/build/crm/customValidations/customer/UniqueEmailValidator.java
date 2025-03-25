@@ -3,7 +3,8 @@ package site.easy.to.build.crm.customValidations.customer;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import site.easy.to.build.crm.entity.Customer;
+
+import site.easy.to.build.crm.entity.Customers.Customer;
 import site.easy.to.build.crm.service.customer.CustomerService;
 
 public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail,String> {

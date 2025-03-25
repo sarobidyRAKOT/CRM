@@ -19,18 +19,8 @@ public interface GoogleAccessService {
     static final String SCOPE_DRIVE = "https://www.googleapis.com/auth/drive.file";
     static final String REDIRECT_URI = "employee/settings/handle-granted-access";
 
-    public RedirectView grantGoogleAccess(Authentication authentication,
-                                          HttpSession session,
-                                          boolean grantCalendarAccess,
-                                          boolean grantGmailAccess,
-                                          boolean grantDriveAccess,
-                                          HttpServletRequest request);
-    public String handleGrantedAccess(HttpSession session,
-                                      String error,
-                                      String authCode,
-                                      String state,
-                                      Authentication authentication,
-                                      HttpServletRequest request) throws IOException;
+    public RedirectView grantGoogleAccess(Authentication authentication, HttpSession session, boolean grantCalendarAccess, boolean grantGmailAccess, boolean grantDriveAccess, HttpServletRequest request);
+    public String handleGrantedAccess(HttpSession session, String error, String authCode, String state, Authentication authentication, HttpServletRequest request) throws IOException;
 
     public void verifyAccessAndHandleRevokedToken(OAuthUser oAuthUser, User user, List<String> scopesToCheck) throws IOException;
 

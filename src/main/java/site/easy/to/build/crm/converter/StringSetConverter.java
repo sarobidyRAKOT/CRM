@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Converter
-public class StringSetConverter implements AttributeConverter<Set<String>, String> {
+public class StringSetConverter implements AttributeConverter <Set<String>, String> {
 
     private static final String SPLIT_CHAR = ",";
 
@@ -26,7 +26,6 @@ public class StringSetConverter implements AttributeConverter<Set<String>, Strin
         if (dbData == null || dbData.isEmpty()) {
             return new HashSet<>();
         }
-        return Arrays.stream(dbData.split(SPLIT_CHAR))
-                .collect(Collectors.toSet());
+        return Arrays.stream(dbData.split(SPLIT_CHAR)).collect(Collectors.toSet());
     }
 }

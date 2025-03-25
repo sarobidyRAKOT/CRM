@@ -104,6 +104,70 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                <a th:href="${home + 'depense-lead/modifier/depense-lead/'+ lead.leadId}">
+                                    <button type="submit" class="btn btn-primary m-t-20">Modifier depense farany</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Depense lead Details</h4>
+                            <div class="row" th:if="${depense_lead != null}">
+
+                                <div class="col-md-2 col-xs-6 b-r"> <strong>depenseId</strong>
+                                    <br>
+                                    <p class="text-muted" th:text="${depense_lead.depenseId}"></p>
+                                </div>
+                                <div class="col-md-6 col-xs-6 b-r"> <strong>Description</strong>
+                                    <br>
+                                    <p class="text-muted" th:text="${depense_lead.description}"></p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <strong>lead Status</strong>
+                                    <br>
+                                    <p class="text-muted" th:text="${depense_lead.lead.status}"></p>
+                                </div>
+                                <div class="col-md-2 col-xs-6"> <strong>Created at</strong>
+                                    <br>
+                                    <p class="text-muted" th:text="${depense_lead.lead.createdAt}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Historique modification depense</h4>
+                            <div class="table-responsive m-t-40">
+                                <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>date modofication</th>
+                                        <th>montant</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:if="${montant_dls != null}" th:each="mdl : ${montant_dls}">
+                                        <td th:text="${mdl.id}"></td>
+                                        <td th:text="${mdl.daty}"></td>
+                                        <td th:text="${mdl.montant}+' Ariary'"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

@@ -3,9 +3,10 @@ package site.easy.to.build.crm.service.lead;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import site.easy.to.build.crm.entity.Customer;
-import site.easy.to.build.crm.repository.LeadRepository;
-import site.easy.to.build.crm.entity.Lead;
+
+import site.easy.to.build.crm.entity.Customers.Customer;
+import site.easy.to.build.crm.entity.lead.Lead;
+import site.easy.to.build.crm.repository.lead.LeadRepository;
 
 import java.util.List;
 
@@ -93,5 +94,10 @@ public class LeadServiceImpl implements LeadService {
     @Override
     public long countByCustomerId(int customerId) {
         return leadRepository.countByCustomerCustomerId(customerId);
+    }
+
+    @Override
+    public List<Lead> findAll_nonDeleted() {
+        return leadRepository.findAll_nonDeleted();
     }
 }

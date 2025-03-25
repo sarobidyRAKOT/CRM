@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import site.easy.to.build.crm.customValidations.FutureDate;
 import site.easy.to.build.crm.customValidations.contract.StartDateBeforeEndDate;
+import site.easy.to.build.crm.entity.Customers.Customer;
+import site.easy.to.build.crm.entity.lead.Lead;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,6 +15,7 @@ import java.util.List;
 @Table(name = "trigger_contract")
 @StartDateBeforeEndDate
 public class Contract {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "contract_id")

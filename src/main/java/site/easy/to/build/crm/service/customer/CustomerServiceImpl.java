@@ -3,8 +3,9 @@ package site.easy.to.build.crm.service.customer;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import site.easy.to.build.crm.repository.CustomerRepository;
-import site.easy.to.build.crm.entity.Customer;
+
+import site.easy.to.build.crm.entity.Customers.Customer;
+import site.easy.to.build.crm.repository.Customer.CustomerRepository;
 
 import java.util.List;
 

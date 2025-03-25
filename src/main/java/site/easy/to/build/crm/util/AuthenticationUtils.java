@@ -43,7 +43,7 @@ public class AuthenticationUtils {
         return oAuthUserService.findBtEmail(email);
     }
 
-    public int getLoggedInUserId(Authentication authentication) {
+    public int getLoggedInUserId (Authentication authentication) {
         User user;
         
         CustomerLoginInfo customerLoginInfo;

@@ -1,7 +1,7 @@
 package site.easy.to.build.crm.service.customer;
 
-import org.checkerframework.checker.units.qual.C;
-import site.easy.to.build.crm.entity.Customer;
+
+import site.easy.to.build.crm.entity.Customers.Customer;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ public interface CustomerService {
     public List<Customer> findByUserId(int userId);
 
     public Customer findByEmail(String email);
-
     public List<Customer> findAll();
 
     public Customer save(Customer customer);

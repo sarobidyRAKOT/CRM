@@ -3,9 +3,10 @@ package site.easy.to.build.crm.service.ticket;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import site.easy.to.build.crm.entity.Customer;
-import site.easy.to.build.crm.repository.TicketRepository;
-import site.easy.to.build.crm.entity.Ticket;
+
+import site.easy.to.build.crm.entity.Customers.Customer;
+import site.easy.to.build.crm.entity.ticket.Ticket;
+import site.easy.to.build.crm.repository.ticket.TicketRepository;
 
 import java.util.List;
 
@@ -90,4 +91,9 @@ public class TicketServiceImpl implements TicketService{
     public void deleteAllByCustomer(Customer customer) {
         ticketRepository.deleteAllByCustomer(customer);
     }
+
+	@Override
+	public List<Ticket> findAll_nonDeleted () {
+        return ticketRepository.findAll_nonDeleted();
+	}
 }

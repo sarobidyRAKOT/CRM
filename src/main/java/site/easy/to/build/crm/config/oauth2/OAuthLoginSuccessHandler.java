@@ -122,6 +122,7 @@ public class OAuthLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHand
             if (user == null) {
                 user = new User();
                 UserProfile userProfile = new UserProfile();
+                
                 userProfile.setFirstName(firstName);
                 userProfile.setLastName(lastName);
                 userProfile.setOathUserImageLink(img);
